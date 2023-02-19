@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phone Number and Message Form</title>
+  </head>
+  <body>
+    <form id="phone-message-form">
+      <label for="phone-number">Phone Number:</label>
+      <input type="tel" id="phone-number" name="phone-number"><br><br>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea><br><br>
+
+      <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    <script>
+      const form = document.querySelector('#phone-message-form');
+      const submitBtn = document.querySelector('#submit-btn');
+      const phoneNumberInput = document.querySelector('#phone-number');
+      const messageInput = document.querySelector('#message');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Get the values of the inputs
+        const phoneNumber = phoneNumberInput.value;
+        const message = messageInput.value;
+
+        // TODO: Add validation for the inputs
+
+        // Send the data to the server
+        sendDataToServer(phoneNumber, message);
+      });
+
+      function sendDataToServer(phoneNumber, message) {
+        // TODO: Send the data to the server using AJAX or fetch API
+        console.log(`Phone Number: ${phoneNumber}, Message: ${message}`);
+      }
+    </script>
+  </body>
+</html>
